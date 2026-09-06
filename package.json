@@ -1,0 +1,46 @@
+{
+  "name": "super-utils",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "turbo format",
+    "typecheck": "turbo typecheck",
+    "clean": "bun run --bun ./scripts/clean-up.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "@workspace/eslint-config": "workspace:*",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "turbo": "^2.9.18",
+    "typescript": "^5"
+  },
+  "packageManager": "bun@1.3.14",
+  "engines": {
+    "node": ">=20"
+  },
+  "prettier": {
+    "endOfLine": "lf",
+    "semi": true,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "printWidth": 80,
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ],
+    "tailwindStylesheet": "internals/ui/src/styles/globals.css",
+    "tailwindFunctions": [
+      "cn",
+      "cva"
+    ]
+  },
+  "workspaces": [
+    "apps/*",
+    "internals/*",
+    "packages/*"
+  ]
+}
